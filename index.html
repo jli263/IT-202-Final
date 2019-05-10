@@ -16,7 +16,6 @@
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>    
    </head>
    
    <body>
@@ -54,7 +53,7 @@
 
                      google.maps.event.addListener(marker, 'click', function() {
                         var distanceLength = getDistance (lat, long, parseFloat(j.latitude), parseFloat(j.longitude));
-                        infowindow.setContent("<h3>Address: " + j.address + "</h3>" + "<h3>Distance: " + distanceLength + "</h3>" + "<h3>District: " + j.district_name + "</h3>");
+                        infowindow.setContent("<h3>Address: " + j.address + "</h3>" + "<h3>Distance: " + distanceLength + " Km</h3>" + "<h3>District: " + j.district_name + "</h3>");
                         infowindow.open(map, this);
                       });
                     }
