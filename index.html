@@ -37,7 +37,19 @@
                  var map = new google.maps.Map(document.getElementById('map'), {zoom: 11, center: currLocation});  
                  var infowindow = new google.maps.InfoWindow();
                  
-                  function getDistance (lat,lng,lat0,lng0) {
+                 var marker = new google.maps.Marker({
+                       map: map,
+                       position: currLocation,
+                       icon: "http://maps.google.com/mapfiles/kml/paddle/grn-stars.png"
+                 });
+                 
+                 google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent("<h3>Current Location: " + lat + "," + long + "</h3>");
+                    infowindow.open(map, this);
+                 });
+                 
+                 
+                 function getDistance (lat,lng,lat0,lng0) {
                     deglen = 110.25
                     x = lat - lat0
                     y = (lng - lng0)*Math.cos(lat0)
