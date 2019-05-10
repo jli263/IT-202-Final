@@ -57,8 +57,7 @@
 
                      google.maps.event.addListener(marker, 'click', function() {
                         var distanceLength = getDistance (lat, long, parseFloat(j.latitude), parseFloat(j.longitude));
-                        console.log(distanceLength);
-                        infowindow.setContent("<h3> " + j.address + "</h3>" + "<h3>Distance: " + distanceLength + "</h3>");
+                        infowindow.setContent("<h3>Address: " + j.address + "</h3>" + "<h3>Distance: " + distanceLength + "</h3>" + "<h3>District: " + j.district_name + "</h3>");
                         infowindow.open(map, this);
                       });
                     }
